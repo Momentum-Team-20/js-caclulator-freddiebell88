@@ -1,0 +1,9 @@
+make each button clickable
+    why am I having trouble applying this to all buttons in the same function? 
+make clicked numbers visible in display
+
+make clear erase display
+
+make operators do their operating
+    show answer in display
+
