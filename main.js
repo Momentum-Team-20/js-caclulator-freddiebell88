@@ -37,13 +37,16 @@ let currentNumber = document.querySelectorAll('.number');
 
 //grab all operator buttons
 let buttonOperators = document.querySelectorAll(".operators")
-console.log(buttonOperators)
 
 for (let operators of buttonOperators) {
-    operators.addEventListener('click', () => {
-        // console.log("operating!")
-        if (buttonOperators === "X") {
+    operators.addEventListener('click', (event) => {
+        console.log(operators.innerText)
+        // operators = event.target.value;
+        // console.log(event.target.value)
+        if (operators.innerText === 'X') {
             console.log("multiply")
+        } else if {
+            
         }
     })
 
