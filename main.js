@@ -11,7 +11,7 @@ console.log('connected')
 const buttons = document.querySelectorAll('.button')
 console.log(buttons)
 
-let displayScreen = document.querySelector('#display');
+// let displayScreen = document.querySelector('#display');
 //when button is clicked log clicked
 for (let button of buttons) {
     button.addEventListener('click', () => {
@@ -33,31 +33,25 @@ let currentNumber = document.querySelectorAll('.number');
     }
 
 // make the math math!
-// if/else if operator === X then function etd
+// if/else if operator === X then function etc
 
 //grab all operator buttons
 let buttonOperators = document.querySelectorAll(".operators")
-
+//getting their inner text value and logging a string - set up to later add operational function
 for (let operators of buttonOperators) {
     operators.addEventListener('click', (event) => {
-        console.log(operators.innerText)
-        // operators = event.target.value;
-        // console.log(event.target.value)
         if (operators.innerText === 'X') {
             console.log("multiply")
-        } else if {
-            
-        }
+        } else if (operators.innerText === '/') {
+            console.log("divide")
+        } else if (operators.innerText === '-') {
+            console.log("subtract")
+        } else if (operators.innerText === '+') {
+            console.log("add")
+        } 
     })
 
 }
 
-// for (let operators of buttonOperators) {
-//     console.log("operating!")
-//     if (buttonOperators === "X") {
-//             operators.addEventListener('click', () => {
-//             console.log("multiply")
-//         })
-//         }
+//use a for loop to do ^^ for equals button? 
 
-// }
