@@ -17,10 +17,17 @@ for (let button of buttons) {
     button.addEventListener('click', () => {
     console.log("clicked!")
     console.log(button.innerText)
-    const node = document.createTextNode(button.innerText);
-    displayScreen.appendChild(node);
+    //attempting! to get clicked button to appear in display
+    // const node = document.createTextNode(button.innerText);
+    // displayScreen.appendChild(node);
 })
-//attempting! to get clicked button to appear in display
-
-// displayScreen.innerText = button.innerText
 }
+
+let currentNumber = document.querySelectorAll('.number');
+    console.log(currentNumber)
+    for (let number of currentNumber) {
+        number.addEventListener('click', () => {
+            const node = document.createTextNode(number.innerText);
+            displayScreen.appendChild(node)    
+        })
+    }
