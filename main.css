@@ -26,6 +26,9 @@
 
 .button {
     justify-self: center;
-    
+    /* border: 5px solid white */
 }
 
+/* .operators {
+    background-color: lightgreen;
+} */

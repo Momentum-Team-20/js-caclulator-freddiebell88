@@ -3,24 +3,24 @@ console.log('connected')
 const sevenButton = document.querySelector('.seven')
 
 sevenButton.addEventListener('click', () => {
-    console.log("clicked!")
+    // console.log("clicked!")
+   
 }) 
 
-const eightButton = document.querySelector('.eight')
+//grab all button elements
+const buttons = document.querySelectorAll('.button')
+console.log(buttons)
 
-eightButton.addEventListener('click', () => {
+let displayScreen = document.querySelector('#display');
+//when button is clicked log clicked
+for (let button of buttons) {
+    button.addEventListener('click', () => {
     console.log("clicked!")
+    console.log(button.innerText)
+    const node = document.createTextNode(button.innerText);
+    displayScreen.appendChild(node);
 })
+//attempting! to get clicked button to appear in display
 
-const nineButton = document.querySelector('.nine')
-
-nineButton.addEventListener('click', () => {
-    console.log("clicked!")
-})
-
-
-// for (let button of buttons) {
-// buttons.addEventListener('click', () => {
-//     console.log("clicked!")
-// })
-// }
+// displayScreen.innerText = button.innerText
+}

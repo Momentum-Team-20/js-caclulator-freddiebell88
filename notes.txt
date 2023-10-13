@@ -1,6 +1,7 @@
 make each button clickable
-    why am I having trouble applying this to all buttons in the same function? 
+
 make clicked numbers visible in display
+    HOW
 
 make clear erase display
 
