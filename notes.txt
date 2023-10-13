@@ -1,10 +1,11 @@
 make each button clickable
 
 make clicked numbers visible in display
-    HOW
+    
 
-make clear erase display
 
 make operators do their operating
     show answer in display
 
+
+make clear erase display
