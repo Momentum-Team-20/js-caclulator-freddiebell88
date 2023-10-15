@@ -1,12 +1,5 @@
 console.log('connected')
 
-// const sevenButton = document.querySelector('.seven')
-
-// sevenButton.addEventListener('click', () => {
-//     // console.log("clicked!")
-   
-// }) 
-
 //grab all button elements
 const buttons = document.querySelectorAll('.button')
 console.log(buttons)
@@ -23,23 +16,18 @@ for (let button of buttons) {
 })
 }
 
-
 window.mathExpression = '';
 
 let allNumberButtons = document.querySelectorAll('.number');
     console.log(allNumberButtons)
     for (let number of allNumberButtons) {
-        number.addEventListener('click', () => {
-            // const node = document.createTextNode(number.innerText);
-            // displayScreen.appendChild(node)    
-            displayScreen.innerText = number.innerText
+        number.addEventListener('click', () => {   
+            displayScreen.innerText += number.innerText
             // build onto mathExpression
             window.mathExpression += number.innerText
         })
     }
 
-// make the math math!
-// if/else if operator === X then function etc
 
 //grab all operator buttons
 let buttonOperators = document.querySelectorAll(".operators")
@@ -48,7 +36,7 @@ for (let operators of buttonOperators) {
     operators.addEventListener('click', (event) => {
         if (operators.innerText === 'X') {
             console.log("multiply")
-            //holding number then multiplication function then holding new number to let later solve
+            //holding number then multiplication function then holding new number to let later solve in a string variable
             window.mathExpression += '*'
             
         } else if (operators.innerText === '/') {
@@ -64,14 +52,22 @@ for (let operators of buttonOperators) {
             console.log("equals")
             let solveEquation = eval(window.mathExpression)
             console.log(solveEquation)
-            // clear our window.mathExpression and display screen
-            
-            // put solveEquation into displayScreen
+            // clear out window.mathExpression and display screen
+
+            // puts solveEquation into displayScreen
             displayScreen.innerText = solveEquation
+            
         } 
     })
 
 }
+// while diplayScreen.innerText = solveEquation listen for number click then reset mathExpression to null
 
-//use a for loop to do ^^ for equals button? 
+//clicking clear button will clear display screen
 
+    clear.addEventListener('click', () => {
+        console.log("clear screen")
+        let element = document.getElementById("display");
+        element.innerText = "";
+        window.mathExpression = "";
+    })
