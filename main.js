@@ -11,7 +11,7 @@ console.log('connected')
 const buttons = document.querySelectorAll('.button')
 console.log(buttons)
 
-// let displayScreen = document.querySelector('#display');
+let displayScreen = document.querySelector('#display');
 //when button is clicked log clicked
 for (let button of buttons) {
     button.addEventListener('click', () => {
@@ -23,12 +23,18 @@ for (let button of buttons) {
 })
 }
 
-let currentNumber = document.querySelectorAll('.number');
-    console.log(currentNumber)
-    for (let number of currentNumber) {
+
+window.mathExpression = '';
+
+let allNumberButtons = document.querySelectorAll('.number');
+    console.log(allNumberButtons)
+    for (let number of allNumberButtons) {
         number.addEventListener('click', () => {
-            const node = document.createTextNode(number.innerText);
-            displayScreen.appendChild(node)    
+            // const node = document.createTextNode(number.innerText);
+            // displayScreen.appendChild(node)    
+            displayScreen.innerText = number.innerText
+            // build onto mathExpression
+            window.mathExpression += number.innerText
         })
     }
 
@@ -42,12 +48,26 @@ for (let operators of buttonOperators) {
     operators.addEventListener('click', (event) => {
         if (operators.innerText === 'X') {
             console.log("multiply")
+            //holding number then multiplication function then holding new number to let later solve
+            window.mathExpression += '*'
+            
         } else if (operators.innerText === '/') {
             console.log("divide")
+            window.mathExpression += '/'
         } else if (operators.innerText === '-') {
             console.log("subtract")
+            window.mathExpression += '-'
         } else if (operators.innerText === '+') {
             console.log("add")
+            window.mathExpression += '+'
+        } else if (operators.innerText === '=') {
+            console.log("equals")
+            let solveEquation = eval(window.mathExpression)
+            console.log(solveEquation)
+            // clear our window.mathExpression and display screen
+            
+            // put solveEquation into displayScreen
+            displayScreen.innerText = solveEquation
         } 
     })
 

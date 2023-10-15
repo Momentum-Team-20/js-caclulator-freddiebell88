@@ -8,4 +8,9 @@ make operators do their operating
     show answer in display
 
 
+clear out mathExpression 
+    when next number is clicked/after solveEquation has happened
+    event for solveEquation? then reset mathExpression
+
+    
 make clear erase display
