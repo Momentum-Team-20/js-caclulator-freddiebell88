@@ -18,6 +18,7 @@ for (let button of buttons) {
 
 window.mathExpression = '';
 
+
 let allNumberButtons = document.querySelectorAll('.number');
     console.log(allNumberButtons)
     for (let number of allNumberButtons) {
@@ -52,22 +53,18 @@ for (let operators of buttonOperators) {
             console.log("equals")
             let solveEquation = eval(window.mathExpression)
             console.log(solveEquation)
-            // clear out window.mathExpression and display screen
-
             // puts solveEquation into displayScreen
             displayScreen.innerText = solveEquation
-            
+            //attempts to reset equation
         } 
     })
-
 }
-// while diplayScreen.innerText = solveEquation listen for number click then reset mathExpression to null
+// while diplayScreen.innerText = solveEquation listen for number click then reset mathExpression to null?
 
 //clicking clear button will clear display screen
-
-    clear.addEventListener('click', () => {
-        console.log("clear screen")
-        let element = document.getElementById("display");
-        element.innerText = "";
-        window.mathExpression = "";
+clear.addEventListener('click', () => {
+    console.log("clear screen")
+    let element = document.getElementById("display");
+    element.innerText = "";
+    window.mathExpression = "";
     })
