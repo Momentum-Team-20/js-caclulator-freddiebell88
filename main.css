@@ -1,13 +1,12 @@
 * {font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
     color: white;
-    border: 2px solid pink;
 }
 
 .calculator {
     background-color: green;
-    max-width: 400px;
-    padding-top: 1em;
+    max-width: 250px;
+    border: 2px solid black
     
 }
 .row1, .rows {
@@ -16,20 +15,26 @@
 
 .row1 {
     grid-template-columns: 1fr 3fr; 
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr;
+    border: solid white;
 }
 
 .rows{
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr;
 }
 
 .button {
-    justify-self: center;
-    /* padding: 20px; */
-    /* border:5px solid white */
+    justify-items: center;
+    padding: 20px;
+    border:5px solid white;
 }
 
-/* .operators {
+#display {
+    justify-self: right;
+    align-self: center;
+}
+
+.operators {
     background-color: lightgreen;
-} */
+}
