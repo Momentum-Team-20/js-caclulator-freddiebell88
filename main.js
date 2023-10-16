@@ -56,6 +56,15 @@ for (let operators of buttonOperators) {
             // puts solveEquation into displayScreen
             displayScreen.innerText = solveEquation
             //attempts to reset equation
+            // let newEquation = document.querySelectorAll('.number');
+            // console.log(newEquation)
+            // for (let number of newEquation)
+            // number.addEventListener('click', () => {
+            //     console.log("clear screen")
+            //     let element = document.getElementById("display");
+            //     element.innerText = number.innerText;
+            //     window.mathExpression = "";
+            //     })
         } 
     })
 }
