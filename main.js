@@ -1,31 +1,28 @@
-console.log('connected')
+// console.log('connected')
 
 //grab all button elements
 const buttons = document.querySelectorAll('.button')
 console.log(buttons)
 
 let displayScreen = document.querySelector('#display');
-//when button is clicked log clicked
-for (let button of buttons) {
-    button.addEventListener('click', () => {
-    // console.log("clicked!")
-    console.log(button.innerText)
-    //attempting! to get clicked button to appear in display
-    // const node = document.createTextNode(button.innerText);
-    // displayScreen.appendChild(node);
-})
-}
 
-window.mathExpression = '';
+let startingOver = false
+
+let mathExpression = '';
 
 
 let allNumberButtons = document.querySelectorAll('.number');
     console.log(allNumberButtons)
     for (let number of allNumberButtons) {
         number.addEventListener('click', () => {   
+            if (startingOver) {
+                resetEquation()
+                startingOver = false
+                console.log("after reset", startingOver)
+            } 
             displayScreen.innerText += number.innerText
             // build onto mathExpression
-            window.mathExpression += number.innerText
+            mathExpression += number.innerText
         })
     }
 
@@ -38,42 +35,47 @@ for (let operators of buttonOperators) {
         if (operators.innerText === 'X') {
             console.log("multiply")
             //holding number then multiplication function then holding new number to let later solve in a string variable
-            window.mathExpression += '*'
+            mathExpression += '*'
             
         } else if (operators.innerText === '/') {
             console.log("divide")
-            window.mathExpression += '/'
+            mathExpression += '/'
         } else if (operators.innerText === '-') {
             console.log("subtract")
-            window.mathExpression += '-'
+            mathExpression += '-'
         } else if (operators.innerText === '+') {
             console.log("add")
-            window.mathExpression += '+'
+            mathExpression += '+'
         } else if (operators.innerText === '=') {
             console.log("equals")
-            let solveEquation = eval(window.mathExpression)
+            let solveEquation = eval(mathExpression)
             console.log(solveEquation)
             // puts solveEquation into displayScreen
             displayScreen.innerText = solveEquation
+            startingOver = true
+            console.log("This is the value of starting over", startingOver)
             //attempts to reset equation
             // let newEquation = document.querySelectorAll('.number');
             // console.log(newEquation)
             // for (let number of newEquation)
             // number.addEventListener('click', () => {
-            //     console.log("clear screen")
-            //     let element = document.getElementById("display");
-            //     element.innerText = number.innerText;
-            //     window.mathExpression = "";
-            //     })
+            //     console.log("clear")
+                // let element = document.getElementById("display");
+                // element.innerText = number.innerText;
+                // mathExpression = "";
+                // })
         } 
     })
 }
 // while diplayScreen.innerText = solveEquation listen for number click then reset mathExpression to null?
 
 //clicking clear button will clear display screen
-clear.addEventListener('click', () => {
-    console.log("clear screen")
+clear.addEventListener('click', () => { 
+    resetEquation()
+})
+
+function resetEquation() {
     let element = document.getElementById("display");
     element.innerText = "";
-    window.mathExpression = "";
-    })
+    mathExpression = "";
+}
